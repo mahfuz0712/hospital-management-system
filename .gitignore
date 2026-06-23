@@ -3,3 +3,5 @@ dist/
 src/
 docs/
 Makefile
+*.exe
+*.o
