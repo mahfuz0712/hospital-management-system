@@ -4,5 +4,6 @@
     "category": "Productivity",
     "author": "Mohammad Mahfuz Rahman",
     "ageRating": "13+",
-    "license": "Proprietary"
+    "license": "Proprietary",
+    "type": "CLI"
 }
