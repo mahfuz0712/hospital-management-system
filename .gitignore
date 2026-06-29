@@ -2,6 +2,7 @@ data/
 dist/
 src/
 docs/
+installer/
 Makefile
 *.exe
 *.o
