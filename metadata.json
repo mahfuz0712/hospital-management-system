@@ -5,5 +5,9 @@
     "author": "Mohammad Mahfuz Rahman",
     "ageRating": "13+",
     "license": "Proprietary",
-    "type": "CLI"
+    "type": "CLI",
+    "isPaid": true,
+    "price": 2000,
+    "currency": "BDT",
+    "containsAds": false
 }
