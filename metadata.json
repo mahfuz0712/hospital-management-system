@@ -5,7 +5,7 @@
     "author": "Mohammad Mahfuz Rahman",
     "ageRating": "13+",
     "license": "Proprietary",
-    "type": "CLI",
+    "type": "app",
     "isPaid": true,
     "price": 2000,
     "currency": "BDT",
