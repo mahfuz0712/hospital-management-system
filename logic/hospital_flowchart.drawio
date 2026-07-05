@@ -1,0 +1,337 @@
+<mxGraphModel dx="2000" dy="2000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <!-- ==================== PAGE TITLE ==================== -->
+    <mxCell id="title" value="Hospital Management System — Full Algorithm &amp; Flowchart&#xa;Mohammad Mahfuz Rahman (41250102605) | CSE 1290 | Northern University Bangladesh" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="20" width="1200" height="50" as="geometry"/>
+    </mxCell>
+
+    <!-- ==================== LEGEND ==================== -->
+    <mxCell id="leg0" value="LEGEND" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="20" y="80" width="160" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="leg1" value="Start / End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="20" y="105" width="100" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="leg2" value="Process / Action" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="20" y="143" width="100" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="leg3" value="Decision" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="20" y="181" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="leg4" value="I/O" style="parallelogram;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="20" y="229" width="100" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="leg5" value="Sub-process" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="20" y="267" width="100" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="leg6" value="Disk / File I/O" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="20" y="305" width="100" height="35" as="geometry"/>
+    </mxCell>
+
+    <!-- ========================================================
+         SECTION 1: PROGRAM STARTUP & LOGIN
+    ======================================================== -->
+    <mxCell id="s1_label" value="1. PROGRAM STARTUP &amp; LOGIN" style="text;html=1;strokeColor=#001f60;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=12;rounded=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="80" width="340" height="30" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="s1_start" value="START" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="320" y="130" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_splash" value="showSplashScreen()&#xa;Print title + developer info&#xa;pauseScreen()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="295" y="195" width="150" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_load" value="Load all data from disk:&#xa;loadUsers() → users.dat&#xa;loadPatients() → patients.dat&#xa;loadDoctors() → doctors.dat&#xa;loadAppointments() → appointments.dat&#xa;loadBills() → billing.dat" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="270" y="265" width="200" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_disk1" value="*.dat files&#xa;(binary)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="490" y="280" width="90" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_admin_check" value="users list&#xa;empty?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="310" y="365" width="120" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_seed" value="ensureDefaultAdmin()&#xa;Create admin/admin123&#xa;Save to users.dat&#xa;Print credentials once" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="490" y="370" width="160" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_login_screen" value="login()&#xa;Show attempt N of 3&#xa;Input: username, password" style="parallelogram;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="295" y="450" width="150" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_find_user" value="findUserByUsername()&#xa;Linear search on list" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="295" y="525" width="150" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_verify" value="User found&#xa;AND&#xa;verifyPassword()?&#xa;[XOR scramble + strcmp]" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="300" y="588" width="140" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_attempt" value="attempt &lt; 3?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="490" y="598" width="110" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_exit" value="EXIT&#xa;(too many attempts)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="620" y="603" width="120" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="s1_role" value="Check role:&#xa;ROLE_ADMIN / ROLE_EMPLOYEE / ROLE_DOCTOR" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="295" y="678" width="150" height="65" as="geometry"/>
+    </mxCell>
+
+    <!-- arrows section 1 -->
+    <mxCell id="e_start_splash" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_start" target="s1_splash" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_splash_load" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_splash" target="s1_load" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_disk_load" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" edge="1" source="s1_disk1" target="s1_load" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_load_adminchk" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_load" target="s1_admin_check" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_adminchk_yes" value="YES" style="edgeStyle=orthogonalEdgeStyle;fillColor=#d5e8d4;" edge="1" source="s1_admin_check" target="s1_seed" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_adminchk_no" value="NO" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_admin_check" target="s1_login_screen" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_seed_login" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_seed" target="s1_login_screen" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_login_find" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_login_screen" target="s1_find_user" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_find_verify" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_find_user" target="s1_verify" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_verify_fail" value="NO" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_verify" target="s1_attempt" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_attempt_retry" value="YES&#xa;attempt++" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_attempt" target="s1_login_screen" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="545" y="530"/><mxPoint x="370" y="530"/></Array></mxGeometry></mxCell>
+    <mxCell id="e_attempt_exit" value="NO" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_attempt" target="s1_exit" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_verify_ok" value="YES" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_verify" target="s1_role" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+    <!-- ========================================================
+         SECTION 2: ADMIN MENU TREE
+    ======================================================== -->
+    <mxCell id="s2_label" value="2. ADMIN MENU" style="text;html=1;strokeColor=#001f60;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=12;rounded=1;" vertex="1" parent="1">
+      <mxGeometry x="800" y="80" width="200" height="30" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="s2_menu" value="ADMINISTRATOR MENU&#xa;1. Manage Users&#xa;2. Manage Patients&#xa;3. Manage Doctors&#xa;4. Manage Appointments&#xa;5. Manage Billing&#xa;6. Reports&#xa;0. Logout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="810" y="130" width="180" height="130" as="geometry"/>
+    </mxCell>
+
+    <!-- MANAGE USERS submenu -->
+    <mxCell id="s2_users" value="MANAGE USERS&#xa;1. Add User&#xa;2. View All Users&#xa;3. Update User [NEW]&#xa;4. Delete User&#xa;0. Back" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="630" y="300" width="150" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2_adduser" value="addUser()&#xa;• Auto-increment ID&#xa;• strncpy username&#xa;• xorTransform(password)&#xa;• Set role + linkedDoctorId&#xa;• Append to list tail&#xa;• saveUsers()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="460" y="440" width="170" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2_updateuser" value="updateUser()&#xa;• findUserById() → linear search&#xa;• strncpy new username&#xa;• Set new role&#xa;• Set linkedDoctorId&#xa;[password separate]&#xa;setUserPassword()&#xa;• xorTransform(newPass)&#xa;• saveUsers()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="640" y="440" width="170" height="130" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2_deluser" value="deleteUser()&#xa;• Walk list with prev ptr&#xa;• Unlink node&#xa;• free(node)&#xa;• Return new head&#xa;• saveUsers()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="820" y="440" width="150" height="100" as="geometry"/>
+    </mxCell>
+
+    <!-- MANAGE PATIENTS submenu -->
+    <mxCell id="s2_patients" value="MANAGE PATIENTS&#xa;1. Add Patient&#xa;2. View All&#xa;3. Update Patient&#xa;4. Delete Patient&#xa;5. Search by Name [linear]&#xa;6. Search by ID [binary]&#xa;0. Back" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="810" y="300" width="165" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2_searchname" value="searchPatientByName()&#xa;LINEAR SEARCH&#xa;• containsIgnoreCase()&#xa;• tolower() comparison&#xa;• Return first match" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="810" y="580" width="155" height="90" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2_searchid" value="searchPatientByIdBinary()&#xa;BINARY SEARCH&#xa;• Count nodes&#xa;• malloc array of ptrs&#xa;• qsort by id&#xa;• Binary search loop:&#xa;  mid = low+(high-low)/2&#xa;• free(arr)&#xa;• Return result + comparisons" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="975" y="560" width="175" height="130" as="geometry"/>
+    </mxCell>
+
+    <!-- MANAGE DOCTORS submenu -->
+    <mxCell id="s2_doctors" value="MANAGE DOCTORS&#xa;1. Add Doctor&#xa;2. View All&#xa;3. Update Doctor&#xa;4. Delete Doctor&#xa;5. Search by Name [linear]&#xa;6. Toggle Availability&#xa;0. Back" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="990" y="300" width="165" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2_toggleavail" value="setDoctorAvailability()&#xa;• findDoctorById()&#xa;• Toggle AVAILABLE↔BUSY&#xa;• saveDoctors()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1160" y="440" width="155" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- MANAGE APPOINTMENTS submenu -->
+    <mxCell id="s2_appts" value="MANAGE APPOINTMENTS&#xa;1. Book [specialization]&#xa;2. View All&#xa;3. Update Status&#xa;4. Cancel/Delete&#xa;5. View by Patient ID&#xa;6. Search by Date [binary]&#xa;0. Back" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1170" y="300" width="175" height="120" as="geometry"/>
+    </mxCell>
+
+    <!-- BILLING submenu -->
+    <mxCell id="s2_billing" value="MANAGE BILLING&#xa;1. Create Bill&#xa;2. View All Bills&#xa;3. View Receipt by ID&#xa;4. View by Patient ID&#xa;5. Delete Bill&#xa;0. Back" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1360" y="300" width="155" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2_addbill" value="addBill()&#xa;• Auto-increment ID&#xa;• patientId foreign key&#xa;• totalAmount =&#xa;  consult+medicine+other&#xa;  [auto-computed, never manual]&#xa;• saveBills()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1360" y="440" width="170" height="110" as="geometry"/>
+    </mxCell>
+
+    <!-- REPORTS submenu -->
+    <mxCell id="s2_reports" value="REPORTS&#xa;1. Patient Summary (count+list)&#xa;2. Doctor List (avail stats)&#xa;3. Appointment Report&#xa;   (scheduled/completed/cancelled)&#xa;4. Billing Summary (revenue total)&#xa;0. Back" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1545" y="300" width="195" height="110" as="geometry"/>
+    </mxCell>
+
+    <!-- arrows section 2 -->
+    <mxCell id="e_role_admin" value="ADMIN" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_role" target="s2_menu" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_menu_users" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_menu" target="s2_users" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_menu_patients" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_menu" target="s2_patients" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_menu_doctors" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_menu" target="s2_doctors" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_menu_appts" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_menu" target="s2_appts" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_menu_billing" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_menu" target="s2_billing" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_menu_reports" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_menu" target="s2_reports" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_users_add" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_users" target="s2_adduser" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_users_update" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_users" target="s2_updateuser" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_users_del" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_users" target="s2_deluser" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_patients_name" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_patients" target="s2_searchname" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_patients_id" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_patients" target="s2_searchid" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_doctors_toggle" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_doctors" target="s2_toggleavail" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_billing_add" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s2_billing" target="s2_addbill" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+    <!-- ========================================================
+         SECTION 3: APPOINTMENT BOOKING ALGORITHM (detailed)
+    ======================================================== -->
+    <mxCell id="s3_label" value="3. APPOINTMENT BOOKING ALGORITHM (Double-Booking Guard)" style="text;html=1;strokeColor=#001f60;fillColor=#ffe6cc;align=center;fontStyle=1;fontSize=12;rounded=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="800" width="500" height="30" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="s3_start" value="Book Appointment&#xa;(Admin or Employee)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="310" y="850" width="130" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_pid" value="Input: Patient ID" style="parallelogram;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="310" y="915" width="130" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_findp" value="findPatientById()&#xa;Linear search" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="310" y="968" width="130" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_pfound" value="Patient&#xa;found?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="315" y="1026" width="120" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_perr" value="Error: patient&#xa;not found" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="480" y="1033" width="110" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_spec" value="Input: Specialization" style="parallelogram;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="310" y="1100" width="130" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_finddoc" value="findAvailableDoctorBySpecialization()&#xa;LINEAR SEARCH:&#xa;equalsIgnoreCase(spec) AND&#xa;availability == DOCTOR_AVAILABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="285" y="1152" width="180" height="65" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_dfound" value="Doctor&#xa;found?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="315" y="1235" width="120" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_derr" value="Error: no available&#xa;doctor for spec" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="480" y="1242" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_datetime" value="Input: Date (DD-MM-YYYY)&#xa;promptValidatedDate()&#xa;isValidDate() loop&#xa;&#xa;Input: Time (HH:MM)&#xa;promptValidatedTime()&#xa;isValidTime() loop" style="parallelogram;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="285" y="1308" width="180" height="90" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_dbcheck" value="isDoctorAvailableAt()&#xa;LINEAR SEARCH:&#xa;for each appointment:&#xa;  doctorId match? AND&#xa;  date match? AND&#xa;  time match? AND&#xa;  status ≠ CANCELLED?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+      <mxGeometry x="285" y="1415" width="180" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_conflict" value="Slot&#xa;taken?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="315" y="1533" width="120" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_blocked" value="Error: double-booking&#xa;blocked! Choose&#xa;different date/time" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+      <mxGeometry x="480" y="1538" width="140" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_add" value="addAppointment()&#xa;• Auto-increment ID&#xa;• Set patientId, doctorId&#xa;• strncpy date, time&#xa;• status = APPT_SCHEDULED&#xa;• Append to list&#xa;• saveAppointments()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="285" y="1606" width="180" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3_success" value="Success: Appointment booked" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="295" y="1734" width="160" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- arrows section 3 -->
+    <mxCell id="e3_1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_start" target="s3_pid" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_pid" target="s3_findp" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_3" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_findp" target="s3_pfound" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_4" value="NO" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_pfound" target="s3_perr" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_5" value="YES" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_pfound" target="s3_spec" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_spec" target="s3_finddoc" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_7" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_finddoc" target="s3_dfound" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_8" value="NO" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_dfound" target="s3_derr" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_9" value="YES" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_dfound" target="s3_datetime" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_10" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_datetime" target="s3_dbcheck" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_11" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_dbcheck" target="s3_conflict" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_12" value="YES&#xa;(slot taken)" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_conflict" target="s3_blocked" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_13" value="NO&#xa;(slot free)" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_conflict" target="s3_add" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e3_14" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s3_add" target="s3_success" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+    <!-- ========================================================
+         SECTION 4: EMPLOYEE MENU
+    ======================================================== -->
+    <mxCell id="s4_label" value="4. EMPLOYEE MENU" style="text;html=1;strokeColor=#001f60;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=12;rounded=1;" vertex="1" parent="1">
+      <mxGeometry x="800" y="800" width="220" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="s4_menu" value="EMPLOYEE MENU&#xa;1. Add Patient&#xa;2. View All Patients&#xa;3. Search Patient by Name&#xa;4. Book Appointment [same double-booking guard]&#xa;5. View All Appointments&#xa;6. Create Bill&#xa;7. View Receipt by Bill ID&#xa;0. Logout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="800" y="848" width="230" height="140" as="geometry"/>
+    </mxCell>
+    <mxCell id="s4_note" value="NOTE: Employee has NO access to:&#xa;• Manage Users&#xa;• Manage Doctors&#xa;• Reports&#xa;• Update/Delete Appointments" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="800" y="1005" width="200" height="80" as="geometry"/>
+    </mxCell>
+
+    <!-- ========================================================
+         SECTION 5: DOCTOR MENU
+    ======================================================== -->
+    <mxCell id="s5_label" value="5. DOCTOR MENU (Read-Only, Self-Restricted)" style="text;html=1;strokeColor=#001f60;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=12;rounded=1;" vertex="1" parent="1">
+      <mxGeometry x="1060" y="800" width="320" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="s5_link" value="linkedDoctorId check&#xa;findDoctorById(linkedDoctorId)&#xa;NULL? → error, return" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="1090" y="850" width="170" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="s5_menu" value="DOCTOR MENU — Dr. [name]&#xa;1. View My Appointments&#xa;   displayAppointmentsByDoctorId()&#xa;   [filtered by own doctorId]&#xa;2. View a Specific Patient&#xa;   Auth check: patient must have&#xa;   appointment WITH this doctor&#xa;0. Logout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1080" y="940" width="215" height="130" as="geometry"/>
+    </mxCell>
+    <mxCell id="s5_auth" value="Patient Authorization:&#xa;Loop appointments:&#xa;  a.patientId == input AND&#xa;  a.doctorId == myId?&#xa;YES → displayPatient()&#xa;NO  → 'Not assigned to you'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1080" y="1088" width="210" height="100" as="geometry"/>
+    </mxCell>
+
+    <!-- ========================================================
+         SECTION 6: DATA LAYER ALGORITHMS SUMMARY
+    ======================================================== -->
+    <mxCell id="s6_label" value="6. DATA LAYER — KEY ALGORITHMS SUMMARY" style="text;html=1;strokeColor=#001f60;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=12;rounded=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="1800" width="440" height="30" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="s6_xor" value="PASSWORD SECURITY: XOR Cipher&#xa;────────────────────────────&#xa;xorTransform(input, output):&#xa;  key = 'NUB_CSE_SD1'&#xa;  for i in 0..len(input):&#xa;    output[i] = input[i] XOR key[i % keyLen]&#xa;  output[len] = '\0'&#xa;&#xa;• XOR is symmetric: apply twice = original&#xa;• Same fn used for scramble AND verify&#xa;• NOT cryptographic — demonstrates principle" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="200" y="1848" width="270" height="160" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="s6_linear" value="LINEAR SEARCH (used everywhere on linked list)&#xa;────────────────────────────────────────────&#xa;findById, findByUsername, findByName,&#xa;findAvailableDoctorBySpecialization,&#xa;isDoctorAvailableAt, displayByPatientId,&#xa;displayByDoctorId&#xa;&#xa;Complexity: O(n)&#xa;Why: Linked list has no random access.&#xa;Each node must be visited in order." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="490" y="1848" width="290" height="160" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="s6_binary" value="BINARY SEARCH (Patient by ID, Appointment by Date)&#xa;──────────────────────────────────────────────────&#xa;Cannot binary-search a linked list directly.&#xa;Solution:&#xa;  1. Count nodes → n&#xa;  2. malloc array of n pointers&#xa;  3. Copy node ptrs into array&#xa;  4. qsort(array) by key field&#xa;  5. Binary search on sorted array:&#xa;     low=0, high=n-1&#xa;     mid = low + (high-low)/2&#xa;     compare arr[mid] with target&#xa;  6. free(array), return result&#xa;&#xa;Date comparison: DD-MM-YYYY → YYYYMMDD int&#xa;Complexity: O(n log n) sort + O(log n) search" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="800" y="1848" width="310" height="220" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="s6_fileio" value="BINARY FILE I/O (all 5 modules same pattern)&#xa;────────────────────────────────────────────&#xa;SAVE: fopen(file, 'wb')&#xa;  for each node: fwrite(&amp;node, sizeof, 1, fp)&#xa;  fclose()&#xa;&#xa;LOAD: fopen(file, 'rb')&#xa;  while fread(&amp;temp, sizeof, 1, fp) == 1:&#xa;    malloc new node&#xa;    *node = temp (copy struct)&#xa;    node→next = NULL&#xa;    append to tail&#xa;  fclose()&#xa;&#xa;Why binary not text/CSV?&#xa;• Struct has fixed-size arrays + enum&#xa;• No delimiter/parsing issues&#xa;• One fwrite per record" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1130" y="1848" width="290" height="230" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="s6_autoid" value="AUTO-INCREMENT ID (all modules)&#xa;────────────────────────────────&#xa;maxId = 0&#xa;for each node in list:&#xa;  if node→id &gt; maxId: maxId = node→id&#xa;newNode→id = maxId + 1&#xa;&#xa;Why: No database sequence available.&#xa;Guarantees unique, ascending IDs&#xa;even after deletions." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="1440" y="1848" width="250" height="170" as="geometry"/>
+    </mxCell>
+
+    <!-- ========================================================
+         SECTION 7: VALIDATION LAYER
+    ======================================================== -->
+    <mxCell id="s7_label" value="7. VALIDATION LAYER" style="text;html=1;strokeColor=#001f60;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=12;rounded=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="2040" width="200" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="s7_date" value="isValidDate(date)&#xa;• strlen == 10&#xa;• date[2] == '-', date[5] == '-'&#xa;• All other chars isdigit()&#xa;• day: 01-31, month: 01-12" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="200" y="2088" width="180" height="95" as="geometry"/>
+    </mxCell>
+    <mxCell id="s7_time" value="isValidTime(time)&#xa;• strlen == 5&#xa;• time[2] == ':'&#xa;• Other chars isdigit()&#xa;• hour: 00-23, min: 00-59" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="395" y="2088" width="175" height="95" as="geometry"/>
+    </mxCell>
+    <mxCell id="s7_phone" value="isValidPhone(phone)&#xa;• strlen 7-15&#xa;• All chars isdigit()&#xa;• (unsigned char) cast safety" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="585" y="2088" width="170" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="s7_readint" value="readInt(prompt)&#xa;• printf prompt&#xa;• readLine → temp[32]&#xa;• strtol(temp, &amp;endPtr, 10)&#xa;• valid if: temp[0]≠'\0'&#xa;  AND *endPtr=='\0'&#xa;• Loop until valid" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="770" y="2088" width="170" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="s7_readline" value="readLine(buffer, size)&#xa;• fgets(buffer, size, stdin)&#xa;• Strip trailing '\n'&#xa;• trimString():&#xa;  - shift leading spaces left&#xa;  - null-terminate trailing spaces" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="955" y="2088" width="185" height="100" as="geometry"/>
+    </mxCell>
+
+    <!-- ========================================================
+         SECTION 8: IMPLEMENTED vs NOT IMPLEMENTED
+    ======================================================== -->
+    <mxCell id="s8_label" value="8. FEATURE STATUS" style="text;html=1;strokeColor=#001f60;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=12;rounded=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="2220" width="200" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="s8_done" value="✅ IMPLEMENTED&#xa;─────────────────────────&#xa;• Role-based auth (Admin/Employee/Doctor)&#xa;• XOR password obfuscation&#xa;• First-run default admin seeding&#xa;• User: Add, View, Update, Delete&#xa;• Patient: Add, View, Update, Delete&#xa;• Patient: Linear search by name&#xa;• Patient: Binary search by ID&#xa;• Doctor: Add, View, Update, Delete&#xa;• Doctor: Linear search by name&#xa;• Doctor: Toggle availability&#xa;• Doctor: findAvailableBySpecialization&#xa;• Appointment: Book by specialization&#xa;• Appointment: Double-booking guard&#xa;  (isDoctorAvailableAt — Cancelled frees slot)&#xa;• Appointment: View all / by Patient / by Doctor&#xa;• Appointment: Update status (Sched/Comp/Cancel)&#xa;• Appointment: Delete&#xa;• Appointment: Binary search by date&#xa;• Billing: Create, View, Delete&#xa;• Billing: Auto-compute totalAmount&#xa;• Billing: View by Patient ID&#xa;• Billing: Receipt display&#xa;• Reports: Patient/Doctor/Appt/Revenue summary&#xa;• Doctor menu: restricted to own patients only&#xa;• Binary file I/O for all 5 data stores&#xa;• Input validation: date, time, phone, int, float" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="200" y="2268" width="330" height="380" as="geometry"/>
+    </mxCell>
+    <mxCell id="s8_todo" value="⬜ NOT YET IMPLEMENTED (future scope)&#xa;─────────────────────────────────────&#xa;• Real password hashing (SHA-256 + salt)&#xa;• Days-per-month calendar validation&#xa;  (e.g. 31-02-2026 currently passes)&#xa;• Search users by username/role&#xa;• Update Appointment (date/time/doctor change)&#xa;• Update Bill amounts after creation&#xa;• Appointment reminder / upcoming view&#xa;• Multi-result name search&#xa;  (current returns only first match)&#xa;• Pagination for large lists&#xa;• Inno Setup .exe packaging&#xa;• Doctor: view own profile/details&#xa;• Employee: update patient records" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;" vertex="1" parent="1">
+      <mxGeometry x="550" y="2268" width="310" height="290" as="geometry"/>
+    </mxCell>
+
+    <!-- role arrows to menus -->
+    <mxCell id="e_role_emp" value="EMPLOYEE" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_role" target="s4_menu" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_role_doc" value="DOCTOR" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="s1_role" target="s5_link" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e_appts_booking" value="Book&#xa;detail" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" edge="1" source="s2_appts" target="s3_start" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+  </root>
+</mxGraphModel>
