@@ -3,6 +3,7 @@ dist/
 src/
 docs/
 installer/
+logic/
 Makefile
 *.exe
 *.o
