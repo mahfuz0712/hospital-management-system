@@ -4,7 +4,8 @@
 #include <ctype.h>
 #include "headers/utils.h"
 
-void clearScreen(void) {
+void clearScreen(void)
+{
 #ifdef _WIN32
     system("cls");
 #else
@@ -12,12 +13,14 @@ void clearScreen(void) {
 #endif
 }
 
-void pauseScreen(void) {
+void pauseScreen(void)
+{
     printf("\nPress Enter to continue...");
     getchar();
 }
 
-void trimString(char *str) {
+void trimString(char *str)
+{
     if (str == NULL)
         return;
     int start = 0;
@@ -46,7 +49,8 @@ void trimString(char *str) {
     }
 }
 
-void readLine(char *buffer, int size) {
+void readLine(char *buffer, int size)
+{
     if (fgets(buffer, size, stdin) != NULL)
     {
         /* fgets keeps the trailing newline; strip it so stored
@@ -64,7 +68,8 @@ void readLine(char *buffer, int size) {
     trimString(buffer);
 }
 
-int readInt(const char *prompt) {
+int readInt(const char *prompt)
+{
     char temp[32];
     int value;
     char *endPtr;
@@ -86,7 +91,8 @@ int readInt(const char *prompt) {
     }
 }
 
-float readFloat(const char *prompt) {
+float readFloat(const char *prompt)
+{
     char temp[32];
     float value;
     char *endPtr;

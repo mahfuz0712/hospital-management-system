@@ -3,10 +3,8 @@
 
 #include "user.h"
 
+User *ensureDefaultAdmin(User *head);
 
-User* ensureDefaultAdmin(User *head);
-
-
-User* login(User *head);
+User *login(User *head);
 
 #endif

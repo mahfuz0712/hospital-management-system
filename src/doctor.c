@@ -4,7 +4,8 @@
 #include <ctype.h>
 #include "headers/doctor.h"
 
-Doctor *loadDoctors(void) {
+Doctor *loadDoctors(void)
+{
     FILE *fp = fopen(DOCTORS_FILE, "rb");
     if (fp == NULL)
     {
@@ -15,7 +16,8 @@ Doctor *loadDoctors(void) {
     Doctor *tail = NULL;
     Doctor temp;
 
-    while (fread(&temp, sizeof(Doctor), 1, fp) == 1) {
+    while (fread(&temp, sizeof(Doctor), 1, fp) == 1)
+    {
         Doctor *node = (Doctor *)malloc(sizeof(Doctor));
         if (node == NULL)
         {
@@ -41,7 +43,8 @@ Doctor *loadDoctors(void) {
     return head;
 }
 
-void saveDoctors(Doctor *head) {
+void saveDoctors(Doctor *head)
+{
     FILE *fp = fopen(DOCTORS_FILE, "wb");
     if (fp == NULL)
     {
@@ -57,7 +60,8 @@ void saveDoctors(Doctor *head) {
     fclose(fp);
 }
 
-void freeDoctors(Doctor *head) {
+void freeDoctors(Doctor *head)
+{
     Doctor *curr = head;
     while (curr != NULL)
     {
@@ -67,15 +71,18 @@ void freeDoctors(Doctor *head) {
     }
 }
 
-Doctor *addDoctor(Doctor *head, const char *name, const char *specialization, const char *phone, Availability availability) {
+Doctor *addDoctor(Doctor *head, const char *name, const char *specialization, const char *phone, Availability availability)
+{
     Doctor *node = (Doctor *)malloc(sizeof(Doctor));
-    if (node == NULL) {
+    if (node == NULL)
+    {
         printf("Memory allocation failed while adding doctor.\n");
         return head;
     }
 
     int maxId = 0;
-    for (Doctor *curr = head; curr != NULL; curr = curr->next) {
+    for (Doctor *curr = head; curr != NULL; curr = curr->next)
+    {
         if (curr->id > maxId)
             maxId = curr->id;
     }
@@ -93,12 +100,14 @@ Doctor *addDoctor(Doctor *head, const char *name, const char *specialization, co
     node->availability = availability;
     node->next = NULL;
 
-    if (head == NULL) {
+    if (head == NULL)
+    {
         return node;
     }
 
     Doctor *curr = head;
-    while (curr->next != NULL) {
+    while (curr->next != NULL)
+    {
         curr = curr->next;
     }
     curr->next = node;
@@ -106,9 +115,11 @@ Doctor *addDoctor(Doctor *head, const char *name, const char *specialization, co
     return head;
 }
 
-int updateDoctor(Doctor *head, int id, const char *name, const char *specialization, const char *phone, Availability availability) {
+int updateDoctor(Doctor *head, int id, const char *name, const char *specialization, const char *phone, Availability availability)
+{
     Doctor *d = findDoctorById(head, id);
-    if (d == NULL) {
+    if (d == NULL)
+    {
         return 0;
     }
 
@@ -126,11 +137,13 @@ int updateDoctor(Doctor *head, int id, const char *name, const char *specializat
     return 1;
 }
 
-Doctor *deleteDoctor(Doctor *head, int id) {
+Doctor *deleteDoctor(Doctor *head, int id)
+{
     Doctor *curr = head;
     Doctor *prev = NULL;
 
-    while (curr != NULL) {
+    while (curr != NULL)
+    {
         if (curr->id == id)
         {
             if (prev == NULL)
@@ -151,7 +164,8 @@ Doctor *deleteDoctor(Doctor *head, int id) {
     return head;
 }
 
-int setDoctorAvailability(Doctor *head, int id, Availability availability) {
+int setDoctorAvailability(Doctor *head, int id, Availability availability)
+{
     Doctor *d = findDoctorById(head, id);
     if (d == NULL)
     {
@@ -161,7 +175,8 @@ int setDoctorAvailability(Doctor *head, int id, Availability availability) {
     return 1;
 }
 
-Doctor *findDoctorById(Doctor *head, int id) {
+Doctor *findDoctorById(Doctor *head, int id)
+{
     for (Doctor *curr = head; curr != NULL; curr = curr->next)
     {
         if (curr->id == id)
@@ -172,7 +187,8 @@ Doctor *findDoctorById(Doctor *head, int id) {
     return NULL;
 }
 
-static int containsIgnoreCase(const char *haystack, const char *needle) {
+static int containsIgnoreCase(const char *haystack, const char *needle)
+{
     size_t hLen = strlen(haystack);
     size_t nLen = strlen(needle);
 
@@ -197,7 +213,8 @@ static int containsIgnoreCase(const char *haystack, const char *needle) {
     return 0;
 }
 
-static int equalsIgnoreCase(const char *a, const char *b) {
+static int equalsIgnoreCase(const char *a, const char *b)
+{
     while (*a != '\0' && *b != '\0')
     {
         if (tolower((unsigned char)*a) != tolower((unsigned char)*b))
@@ -210,7 +227,8 @@ static int equalsIgnoreCase(const char *a, const char *b) {
     return *a == '\0' && *b == '\0';
 }
 
-Doctor *searchDoctorByName(Doctor *head, const char *namePart) {
+Doctor *searchDoctorByName(Doctor *head, const char *namePart)
+{
 
     for (Doctor *curr = head; curr != NULL; curr = curr->next)
     {
@@ -222,7 +240,8 @@ Doctor *searchDoctorByName(Doctor *head, const char *namePart) {
     return NULL;
 }
 
-Doctor *findAvailableDoctorBySpecialization(Doctor *head, const char *specialization) {
+Doctor *findAvailableDoctorBySpecialization(Doctor *head, const char *specialization)
+{
 
     for (Doctor *curr = head; curr != NULL; curr = curr->next)
     {
@@ -235,11 +254,13 @@ Doctor *findAvailableDoctorBySpecialization(Doctor *head, const char *specializa
     return NULL;
 }
 
-const char *availabilityToString(Availability a) {
+const char *availabilityToString(Availability a)
+{
     return (a == DOCTOR_AVAILABLE) ? "Available" : "Busy";
 }
 
-void displayDoctor(const Doctor *d) {
+void displayDoctor(const Doctor *d)
+{
     if (d == NULL)
     {
         printf("Doctor not found.\n");
@@ -255,7 +276,8 @@ void displayDoctor(const Doctor *d) {
     printf("------------------------------------------\n");
 }
 
-void displayAllDoctors(Doctor *head) {
+void displayAllDoctors(Doctor *head)
+{
     if (head == NULL)
     {
         printf("No doctor records found.\n");
@@ -265,7 +287,8 @@ void displayAllDoctors(Doctor *head) {
     printf("%-5s %-20s %-20s %-15s %-10s\n", "ID", "Name", "Specialization", "Phone", "Status");
     printf("-----------------------------------------------------------------------------\n");
 
-    for (Doctor *curr = head; curr != NULL; curr = curr->next) {
+    for (Doctor *curr = head; curr != NULL; curr = curr->next)
+    {
         printf("%-5d %-20s %-20s %-15s %-10s\n", curr->id, curr->name, curr->specialization, curr->phone, availabilityToString(curr->availability));
     }
 }

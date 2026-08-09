@@ -5,7 +5,8 @@
 
 #define XOR_KEY "NUB_CSE_SD1"
 
-static void xorTransform(const char *input, char *output) {
+static void xorTransform(const char *input, char *output)
+{
     size_t keyLen = strlen(XOR_KEY);
     size_t len = strlen(input);
 
@@ -16,7 +17,8 @@ static void xorTransform(const char *input, char *output) {
     output[len] = '\0';
 }
 
-User *loadUsers(void) {
+User *loadUsers(void)
+{
     FILE *fp = fopen(USERS_FILE, "rb");
     if (fp == NULL)
     {
@@ -55,7 +57,8 @@ User *loadUsers(void) {
     return head;
 }
 
-void saveUsers(User *head) {
+void saveUsers(User *head)
+{
     FILE *fp = fopen(USERS_FILE, "wb");
     if (fp == NULL)
     {
@@ -71,7 +74,8 @@ void saveUsers(User *head) {
     fclose(fp);
 }
 
-void freeUsers(User *head) {
+void freeUsers(User *head)
+{
     User *curr = head;
     while (curr != NULL)
     {
@@ -81,7 +85,8 @@ void freeUsers(User *head) {
     }
 }
 
-User *addUser(User *head, const char *username, const char *password, Role role, int linkedDoctorId) {
+User *addUser(User *head, const char *username, const char *password, Role role, int linkedDoctorId)
+{
     User *node = (User *)malloc(sizeof(User));
     if (node == NULL)
     {
@@ -123,7 +128,8 @@ User *addUser(User *head, const char *username, const char *password, Role role,
     return head;
 }
 
-User *deleteUser(User *head, int id) {
+User *deleteUser(User *head, int id)
+{
     User *curr = head;
     User *prev = NULL;
 
@@ -150,7 +156,8 @@ User *deleteUser(User *head, int id) {
     return head;
 }
 
-int updateUser(User *head, int id, const char *username, Role role, int linkedDoctorId) {
+int updateUser(User *head, int id, const char *username, Role role, int linkedDoctorId)
+{
 
     for (User *curr = head; curr != NULL; curr = curr->next)
     {
@@ -170,7 +177,8 @@ int updateUser(User *head, int id, const char *username, Role role, int linkedDo
     return 0;
 }
 
-int setUserPassword(User *head, int id, const char *newPlainPassword) {
+int setUserPassword(User *head, int id, const char *newPlainPassword)
+{
     for (User *curr = head; curr != NULL; curr = curr->next)
     {
         if (curr->id == id)
@@ -185,7 +193,8 @@ int setUserPassword(User *head, int id, const char *newPlainPassword) {
     return 0;
 }
 
-User *findUserByUsername(User *head, const char *username) {
+User *findUserByUsername(User *head, const char *username)
+{
 
     for (User *curr = head; curr != NULL; curr = curr->next)
     {
@@ -197,7 +206,8 @@ User *findUserByUsername(User *head, const char *username) {
     return NULL;
 }
 
-User *findUserById(User *head, int id) {
+User *findUserById(User *head, int id)
+{
     for (User *curr = head; curr != NULL; curr = curr->next)
     {
         if (curr->id == id)
@@ -208,7 +218,8 @@ User *findUserById(User *head, int id) {
     return NULL;
 }
 
-int verifyPassword(const User *user, const char *attemptPlainPassword) {
+int verifyPassword(const User *user, const char *attemptPlainPassword)
+{
     if (user == NULL)
         return 0;
 
@@ -218,7 +229,8 @@ int verifyPassword(const User *user, const char *attemptPlainPassword) {
     return strcmp(user->password, scrambledAttempt) == 0;
 }
 
-const char *roleToString(Role role) {
+const char *roleToString(Role role)
+{
     switch (role)
     {
     case ROLE_ADMIN:

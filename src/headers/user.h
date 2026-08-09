@@ -19,7 +19,7 @@ typedef struct User
     char username[USERNAME_LEN];
     char password[PASSWORD_LEN];
     Role role;
-    int linkedDoctorId; /* -1 if role != ROLE_DOCTOR */
+    int linkedDoctorId; 
     struct User *next;
 } User;
 

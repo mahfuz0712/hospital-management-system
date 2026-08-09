@@ -7,8 +7,10 @@
 #define DEFAULT_ADMIN_USERNAME "admin"
 #define DEFAULT_ADMIN_PASSWORD "admin123"
 
-User* ensureDefaultAdmin(User *head) {
-    if (head != NULL) {
+User *ensureDefaultAdmin(User *head)
+{
+    if (head != NULL)
+    {
         /* users.dat already has data — nothing to seed. */
         return head;
     }
@@ -25,10 +27,12 @@ User* ensureDefaultAdmin(User *head) {
     return head;
 }
 
-User* login(User *head) {
+User *login(User *head)
+{
     char username[USERNAME_LEN];
     char password[PASSWORD_LEN];
-    for (int attempt = 1; attempt <= MAX_LOGIN_ATTEMPTS; attempt++) {
+    for (int attempt = 1; attempt <= MAX_LOGIN_ATTEMPTS; attempt++)
+    {
         clearScreen();
         printf("==========================================\n");
         printf("   HOSPITAL MANAGEMENT SYSTEM - LOGIN\n");
@@ -43,14 +47,16 @@ User* login(User *head) {
 
         User *match = findUserByUsername(head, username);
 
-        if (match != NULL && verifyPassword(match, password)) {
+        if (match != NULL && verifyPassword(match, password))
+        {
             printf("\nLogin successful. Welcome, %s (%s).\n", match->username, roleToString(match->role));
             pauseScreen();
             return match;
         }
 
         printf("\nInvalid username or password.\n");
-        if (attempt < MAX_LOGIN_ATTEMPTS) {
+        if (attempt < MAX_LOGIN_ATTEMPTS)
+        {
             pauseScreen();
         }
     }

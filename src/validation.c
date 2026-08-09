@@ -3,19 +3,23 @@
 #include "headers/validation.h"
 
 /* for checking dates*/
-int isValidDate(const char *date) {
+int isValidDate(const char *date)
+{
     /* Expected length is exactly 10: "DD-MM-YYYY" */
-    if (date == NULL || strlen(date) != 10) {
+    if (date == NULL || strlen(date) != 10)
+    {
         return 0;
     }
 
     /* Dashes must sit at index 2 and index 5. */
-    if (date[2] != '-' || date[5] != '-') {
+    if (date[2] != '-' || date[5] != '-')
+    {
         return 0;
     }
 
     /* Every other character must be a digit. */
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++)
+    {
         if (i == 2 || i == 5)
             continue;
         if (!isdigit((unsigned char)date[i]))
@@ -35,7 +39,8 @@ int isValidDate(const char *date) {
     return 1;
 }
 
-int isValidTime(const char *time) {
+int isValidTime(const char *time)
+{
     /* Expected length is exactly 5: "HH:MM" */
     if (time == NULL || strlen(time) != 5)
     {
@@ -68,7 +73,8 @@ int isValidTime(const char *time) {
     return 1;
 }
 
-int isValidPhone(const char *phone) {
+int isValidPhone(const char *phone)
+{
     if (phone == NULL)
         return 0;
 
@@ -89,7 +95,8 @@ int isValidPhone(const char *phone) {
     return 1;
 }
 
-int isNonEmpty(const char *str) {
+int isNonEmpty(const char *str)
+{
     if (str == NULL)
         return 0;
 

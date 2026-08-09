@@ -4,7 +4,8 @@
 #include <ctype.h>
 #include "headers/patient.h"
 
-Patient *loadPatients(void) {
+Patient *loadPatients(void)
+{
     FILE *fp = fopen(PATIENTS_FILE, "rb");
     if (fp == NULL)
     {
@@ -15,20 +16,24 @@ Patient *loadPatients(void) {
     Patient *tail = NULL;
     Patient temp;
 
-    while (fread(&temp, sizeof(Patient), 1, fp) == 1) {
+    while (fread(&temp, sizeof(Patient), 1, fp) == 1)
+    {
         Patient *node = (Patient *)malloc(sizeof(Patient));
-        if (node == NULL) {
+        if (node == NULL)
+        {
             printf("Memory allocation failed while loading patients.\n");
             break;
         }
         *node = temp;
         node->next = NULL;
 
-        if (head == NULL) {
+        if (head == NULL)
+        {
             head = node;
             tail = node;
         }
-        else {
+        else
+        {
             tail->next = node;
             tail = node;
         }
@@ -38,38 +43,46 @@ Patient *loadPatients(void) {
     return head;
 }
 
-void savePatients(Patient *head) {
+void savePatients(Patient *head)
+{
     FILE *fp = fopen(PATIENTS_FILE, "wb");
-    if (fp == NULL) {
+    if (fp == NULL)
+    {
         printf("Error: could not open %s for writing.\n", PATIENTS_FILE);
         return;
     }
 
-    for (Patient *curr = head; curr != NULL; curr = curr->next) {
+    for (Patient *curr = head; curr != NULL; curr = curr->next)
+    {
         fwrite(curr, sizeof(Patient), 1, fp);
     }
 
     fclose(fp);
 }
 
-void freePatients(Patient *head) {
+void freePatients(Patient *head)
+{
     Patient *curr = head;
-    while (curr != NULL) {
+    while (curr != NULL)
+    {
         Patient *next = curr->next;
         free(curr);
         curr = next;
     }
 }
 
-Patient *addPatient(Patient *head, const char *name, int age, const char *gender, const char *phone, const char *address, const char *diagnosis) {
+Patient *addPatient(Patient *head, const char *name, int age, const char *gender, const char *phone, const char *address, const char *diagnosis)
+{
     Patient *node = (Patient *)malloc(sizeof(Patient));
-    if (node == NULL) {
+    if (node == NULL)
+    {
         printf("Memory allocation failed while adding patient.\n");
         return head;
     }
 
     int maxId = 0;
-    for (Patient *curr = head; curr != NULL; curr = curr->next) {
+    for (Patient *curr = head; curr != NULL; curr = curr->next)
+    {
         if (curr->id > maxId)
             maxId = curr->id;
     }
@@ -94,12 +107,14 @@ Patient *addPatient(Patient *head, const char *name, int age, const char *gender
 
     node->next = NULL;
 
-    if (head == NULL) {
+    if (head == NULL)
+    {
         return node;
     }
 
     Patient *curr = head;
-    while (curr->next != NULL) {
+    while (curr->next != NULL)
+    {
         curr = curr->next;
     }
     curr->next = node;
@@ -107,9 +122,11 @@ Patient *addPatient(Patient *head, const char *name, int age, const char *gender
     return head;
 }
 
-int updatePatient(Patient *head, int id, const char *name, int age, const char *gender, const char *phone, const char *address, const char *diagnosis) {
+int updatePatient(Patient *head, int id, const char *name, int age, const char *gender, const char *phone, const char *address, const char *diagnosis)
+{
     Patient *p = findPatientById(head, id);
-    if (p == NULL) {
+    if (p == NULL)
+    {
         return 0;
     }
 
@@ -133,7 +150,8 @@ int updatePatient(Patient *head, int id, const char *name, int age, const char *
     return 1;
 }
 
-Patient *deletePatient(Patient *head, int id) {
+Patient *deletePatient(Patient *head, int id)
+{
     Patient *curr = head;
     Patient *prev = NULL;
 
@@ -159,7 +177,8 @@ Patient *deletePatient(Patient *head, int id) {
     return head;
 }
 
-Patient *findPatientById(Patient *head, int id) {
+Patient *findPatientById(Patient *head, int id)
+{
     for (Patient *curr = head; curr != NULL; curr = curr->next)
     {
         if (curr->id == id)
@@ -171,15 +190,18 @@ Patient *findPatientById(Patient *head, int id) {
 }
 
 /* Case-insensitive substring check, used by searchPatientByName. */
-static int containsIgnoreCase(const char *haystack, const char *needle) {
+static int containsIgnoreCase(const char *haystack, const char *needle)
+{
     size_t hLen = strlen(haystack);
     size_t nLen = strlen(needle);
 
-    if (nLen == 0 || nLen > hLen) {
+    if (nLen == 0 || nLen > hLen)
+    {
         return 0;
     }
 
-    for (size_t i = 0; i <= hLen - nLen; i++) {
+    for (size_t i = 0; i <= hLen - nLen; i++)
+    {
         size_t j = 0;
         while (j < nLen &&
                tolower((unsigned char)haystack[i + j]) == tolower((unsigned char)needle[j]))
@@ -194,8 +216,10 @@ static int containsIgnoreCase(const char *haystack, const char *needle) {
     return 0;
 }
 
-Patient *searchPatientByName(Patient *head, const char *namePart) {
-    for (Patient *curr = head; curr != NULL; curr = curr->next) {
+Patient *searchPatientByName(Patient *head, const char *namePart)
+{
+    for (Patient *curr = head; curr != NULL; curr = curr->next)
+    {
         if (containsIgnoreCase(curr->name, namePart))
         {
             return curr;
@@ -205,22 +229,26 @@ Patient *searchPatientByName(Patient *head, const char *namePart) {
 }
 
 /* Comparison function for qsort, sorting Patient* pointers by id. */
-static int comparePatientById(const void *a, const void *b) {
+static int comparePatientById(const void *a, const void *b)
+{
     Patient *p1 = *(Patient *const *)a;
     Patient *p2 = *(Patient *const *)b;
     return p1->id - p2->id;
 }
 
-Patient *searchPatientByIdBinary(Patient *head, int id, int *outComparisons) {
+Patient *searchPatientByIdBinary(Patient *head, int id, int *outComparisons)
+{
     int comparisons = 0;
 
     /* Step 1: count nodes so we know how big an array to allocate. */
     int count = 0;
-    for (Patient *curr = head; curr != NULL; curr = curr->next) {
+    for (Patient *curr = head; curr != NULL; curr = curr->next)
+    {
         count++;
     }
 
-    if (count == 0) {
+    if (count == 0)
+    {
         if (outComparisons)
             *outComparisons = 0;
         return NULL;
@@ -230,7 +258,8 @@ Patient *searchPatientByIdBinary(Patient *head, int id, int *outComparisons) {
      * step that makes binary search possible at all: arrays give
      * O(1) access to any index, which a linked list cannot. */
     Patient **arr = (Patient **)malloc(sizeof(Patient *) * count);
-    if (arr == NULL) {
+    if (arr == NULL)
+    {
         printf("Memory allocation failed during binary search.\n");
         if (outComparisons)
             *outComparisons = 0;
@@ -238,7 +267,8 @@ Patient *searchPatientByIdBinary(Patient *head, int id, int *outComparisons) {
     }
 
     int i = 0;
-    for (Patient *curr = head; curr != NULL; curr = curr->next) {
+    for (Patient *curr = head; curr != NULL; curr = curr->next)
+    {
         arr[i++] = curr;
     }
 
@@ -249,7 +279,8 @@ Patient *searchPatientByIdBinary(Patient *head, int id, int *outComparisons) {
     int low = 0, high = count - 1;
     Patient *result = NULL;
 
-    while (low <= high) {
+    while (low <= high)
+    {
         comparisons++;
         int mid = low + (high - low) / 2;
 
@@ -274,8 +305,10 @@ Patient *searchPatientByIdBinary(Patient *head, int id, int *outComparisons) {
     return result;
 }
 
-void displayPatient(const Patient *p) {
-    if (p == NULL) {
+void displayPatient(const Patient *p)
+{
+    if (p == NULL)
+    {
         printf("Patient not found.\n");
         return;
     }
@@ -291,8 +324,10 @@ void displayPatient(const Patient *p) {
     printf("------------------------------------------\n");
 }
 
-void displayAllPatients(Patient *head) {
-    if (head == NULL) {
+void displayAllPatients(Patient *head)
+{
+    if (head == NULL)
+    {
         printf("No patient records found.\n");
         return;
     }
@@ -300,7 +335,8 @@ void displayAllPatients(Patient *head) {
     printf("%-5s %-20s %-5s %-8s %-15s %-20s\n", "ID", "Name", "Age", "Gender", "Phone", "Diagnosis");
     printf("-----------------------------------------------------------------------------\n");
 
-    for (Patient *curr = head; curr != NULL; curr = curr->next) {
+    for (Patient *curr = head; curr != NULL; curr = curr->next)
+    {
         printf("%-5d %-20s %-5d %-8s %-15s %-20s\n", curr->id, curr->name, curr->age, curr->gender, curr->phone, curr->diagnosis);
     }
 }

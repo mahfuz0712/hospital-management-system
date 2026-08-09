@@ -3,9 +3,11 @@
 #include <string.h>
 #include "headers/billing.h"
 
-Bill* loadBills(void) {
+Bill *loadBills(void)
+{
     FILE *fp = fopen(BILLING_FILE, "rb");
-    if (fp == NULL) {
+    if (fp == NULL)
+    {
         return NULL;
     }
 
@@ -13,19 +15,24 @@ Bill* loadBills(void) {
     Bill *tail = NULL;
     Bill temp;
 
-    while (fread(&temp, sizeof(Bill), 1, fp) == 1) {
-        Bill *node = (Bill*) malloc(sizeof(Bill));
-        if (node == NULL) {
+    while (fread(&temp, sizeof(Bill), 1, fp) == 1)
+    {
+        Bill *node = (Bill *)malloc(sizeof(Bill));
+        if (node == NULL)
+        {
             printf("Memory allocation failed while loading bills.\n");
             break;
         }
         *node = temp;
         node->next = NULL;
 
-        if (head == NULL) {
+        if (head == NULL)
+        {
             head = node;
             tail = node;
-        } else {
+        }
+        else
+        {
             tail->next = node;
             tail = node;
         }
@@ -35,39 +42,48 @@ Bill* loadBills(void) {
     return head;
 }
 
-void saveBills(Bill *head) {
+void saveBills(Bill *head)
+{
     FILE *fp = fopen(BILLING_FILE, "wb");
-    if (fp == NULL) {
+    if (fp == NULL)
+    {
         printf("Error: could not open %s for writing.\n", BILLING_FILE);
         return;
     }
 
-    for (Bill *curr = head; curr != NULL; curr = curr->next) {
+    for (Bill *curr = head; curr != NULL; curr = curr->next)
+    {
         fwrite(curr, sizeof(Bill), 1, fp);
     }
 
     fclose(fp);
 }
 
-void freeBills(Bill *head) {
+void freeBills(Bill *head)
+{
     Bill *curr = head;
-    while (curr != NULL) {
+    while (curr != NULL)
+    {
         Bill *next = curr->next;
         free(curr);
         curr = next;
     }
 }
 
-Bill* addBill(Bill *head, int patientId, float consultationFee, float medicineCost, float otherCharges, const char *date) {
-    Bill *node = (Bill*) malloc(sizeof(Bill));
-    if (node == NULL) {
+Bill *addBill(Bill *head, int patientId, float consultationFee, float medicineCost, float otherCharges, const char *date)
+{
+    Bill *node = (Bill *)malloc(sizeof(Bill));
+    if (node == NULL)
+    {
         printf("Memory allocation failed while adding bill.\n");
         return head;
     }
 
     int maxId = 0;
-    for (Bill *curr = head; curr != NULL; curr = curr->next) {
-        if (curr->id > maxId) maxId = curr->id;
+    for (Bill *curr = head; curr != NULL; curr = curr->next)
+    {
+        if (curr->id > maxId)
+            maxId = curr->id;
     }
     node->id = maxId + 1;
 
@@ -85,12 +101,14 @@ Bill* addBill(Bill *head, int patientId, float consultationFee, float medicineCo
 
     node->next = NULL;
 
-    if (head == NULL) {
+    if (head == NULL)
+    {
         return node;
     }
 
     Bill *curr = head;
-    while (curr->next != NULL) {
+    while (curr->next != NULL)
+    {
         curr = curr->next;
     }
     curr->next = node;
@@ -98,15 +116,21 @@ Bill* addBill(Bill *head, int patientId, float consultationFee, float medicineCo
     return head;
 }
 
-Bill* deleteBill(Bill *head, int id) {
+Bill *deleteBill(Bill *head, int id)
+{
     Bill *curr = head;
     Bill *prev = NULL;
 
-    while (curr != NULL) {
-        if (curr->id == id) {
-            if (prev == NULL) {
+    while (curr != NULL)
+    {
+        if (curr->id == id)
+        {
+            if (prev == NULL)
+            {
                 head = curr->next;
-            } else {
+            }
+            else
+            {
                 prev->next = curr->next;
             }
             free(curr);
@@ -119,16 +143,20 @@ Bill* deleteBill(Bill *head, int id) {
     return head;
 }
 
-Bill* findBillById(Bill *head, int id) {
-    for (Bill *curr = head; curr != NULL; curr = curr->next) {
-        if (curr->id == id) {
+Bill *findBillById(Bill *head, int id)
+{
+    for (Bill *curr = head; curr != NULL; curr = curr->next)
+    {
+        if (curr->id == id)
+        {
             return curr;
         }
     }
     return NULL;
 }
 
-void displayBillsByPatientId(Bill *head, int patientId) {
+void displayBillsByPatientId(Bill *head, int patientId)
+{
     /* LINEAR search/filter, same pattern as appointment.c's
      * per-patient and per-doctor filters. */
     int found = 0;
@@ -137,8 +165,10 @@ void displayBillsByPatientId(Bill *head, int patientId) {
     printf("%-5s %-10s %-12s %-10s %-10s %-10s %-10s\n", "ID", "PatientID", "Date", "Consult", "Medicine", "Other", "Total");
     printf("---------------------------------------------------------------------------\n");
 
-    for (Bill *curr = head; curr != NULL; curr = curr->next) {
-        if (curr->patientId == patientId) {
+    for (Bill *curr = head; curr != NULL; curr = curr->next)
+    {
+        if (curr->patientId == patientId)
+        {
             printf("%-5d %-10d %-12s %-10.2f %-10.2f %-10.2f %-10.2f\n",
                    curr->id, curr->patientId, curr->date,
                    curr->consultationFee, curr->medicineCost,
@@ -148,16 +178,21 @@ void displayBillsByPatientId(Bill *head, int patientId) {
         }
     }
 
-    if (!found) {
+    if (!found)
+    {
         printf("No billing records found for patient ID %d.\n", patientId);
-    } else {
+    }
+    else
+    {
         printf("---------------------------------------------------------------------------\n");
         printf("Grand total across all bills: %.2f\n", grandTotal);
     }
 }
 
-void displayBillReceipt(const Bill *b) {
-    if (b == NULL) {
+void displayBillReceipt(const Bill *b)
+{
+    if (b == NULL)
+    {
         printf("Bill not found.\n");
         return;
     }
@@ -177,8 +212,10 @@ void displayBillReceipt(const Bill *b) {
     printf("==========================================\n");
 }
 
-void displayAllBills(Bill *head) {
-    if (head == NULL) {
+void displayAllBills(Bill *head)
+{
+    if (head == NULL)
+    {
         printf("No billing records found.\n");
         return;
     }
@@ -186,7 +223,8 @@ void displayAllBills(Bill *head) {
     printf("%-5s %-10s %-12s %-10s %-10s %-10s %-10s\n", "ID", "PatientID", "Date", "Consult", "Medicine", "Other", "Total");
     printf("---------------------------------------------------------------------------\n");
 
-    for (Bill *curr = head; curr != NULL; curr = curr->next) {
+    for (Bill *curr = head; curr != NULL; curr = curr->next)
+    {
         printf("%-5d %-10d %-12s %-10.2f %-10.2f %-10.2f %-10.2f\n",
                curr->id, curr->patientId, curr->date,
                curr->consultationFee, curr->medicineCost,

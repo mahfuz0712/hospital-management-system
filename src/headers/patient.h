@@ -8,7 +8,8 @@
 #define PATIENT_DIAGNOSIS_LEN 200
 #define PATIENTS_FILE "data/patients.dat"
 
-typedef struct Patient {
+typedef struct Patient
+{
     int id;
     char name[PATIENT_NAME_LEN];
     int age;
@@ -20,21 +21,19 @@ typedef struct Patient {
 } Patient;
 
 /* ---- Lifecycle ---- */
-Patient* loadPatients(void);
+Patient *loadPatients(void);
 void savePatients(Patient *head);
 void freePatients(Patient *head);
 
 /* ---- CRUD ---- */
-Patient* addPatient(Patient *head, const char *name, int age, const char *gender, const char *phone, const char *address, const char *diagnosis);
+Patient *addPatient(Patient *head, const char *name, int age, const char *gender, const char *phone, const char *address, const char *diagnosis);
 int updatePatient(Patient *head, int id, const char *name, int age, const char *gender, const char *phone, const char *address, const char *diagnosis);
-Patient* deletePatient(Patient *head, int id);
-
+Patient *deletePatient(Patient *head, int id);
 
 /* ---- Search ---- */
-Patient* findPatientById(Patient *head, int id);
-Patient* searchPatientByName(Patient *head, const char *namePart);
-Patient* searchPatientByIdBinary(Patient *head, int id, int *outComparisons);
-
+Patient *findPatientById(Patient *head, int id);
+Patient *searchPatientByName(Patient *head, const char *namePart);
+Patient *searchPatientByIdBinary(Patient *head, int id, int *outComparisons);
 
 /* ---- Reporting ---- */
 void displayAllPatients(Patient *head);

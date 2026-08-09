@@ -28,7 +28,8 @@ static int promptValidatedDate(char *buffer, int size);
 static int promptValidatedTime(char *buffer, int size);
 
 /* one-time splash screen  */
-static void showSplashScreen(void) {
+static void showSplashScreen(void)
+{
     clearScreen();
     printf("=================================================\n");
     printf("       HOSPITAL MANAGEMENT SYSTEM\n");
@@ -41,7 +42,8 @@ static void showSplashScreen(void) {
     pauseScreen();
 }
 
-int main(void) {
+int main(void)
+{
     showSplashScreen();
 
     User *userHead = loadUsers();
@@ -49,7 +51,6 @@ int main(void) {
     Doctor *doctorHead = loadDoctors();
     Appointment *apptHead = loadAppointments();
     Bill *billHead = loadBills();
-
 
     userHead = ensureDefaultAdmin(userHead);
 
@@ -147,8 +148,8 @@ static int promptValidatedTime(char *buffer, int size)
 
 /* ============================================================
  * ADMIN MENU — full access to every module
- * ============================================================ 
-*/
+ * ============================================================
+ */
 
 static void adminMenu(User **userHead, Patient **patientHead, Doctor **doctorHead,
                       Appointment **apptHead, Bill **billHead)
