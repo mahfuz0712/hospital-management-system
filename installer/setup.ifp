@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<InstallForgeProject>
+  <Metadata productVersion="1.6.1" projectFileVersion="2.0"/>
+  <ProductInformation>
+    <Name>Hospital Management System</Name>
+    <Version>1.0.0</Version>
+    <CompanyName>Mohammad Mahfuz Rahman</CompanyName>
+    <WebURI>https://portfolio-mahfuz0712.vercel.app</WebURI>
+  </ProductInformation>
+  <InstallerConfiguration>
+    <Prerequisites>
+      <OperatingSystem check="false">
+        <WindowsXP>false</WindowsXP>
+        <WindowsServer2003>true</WindowsServer2003>
+        <WindowsVista>true</WindowsVista>
+        <WindowsServer2008>true</WindowsServer2008>
+        <Windows7>true</Windows7>
+        <Windows8>true</Windows8>
+        <Windows10>true</Windows10>
+        <WindowsServer2016>true</WindowsServer2016>
+        <WindowsServer2019>true</WindowsServer2019>
+        <WindowsServer2022>true</WindowsServer2022>
+        <Windows11>true</Windows11>
+        <WindowsServer2025>true</WindowsServer2025>
+      </OperatingSystem>
+    </Prerequisites>
+    <UserInterface>
+      <WizardImage filePath="&lt;main&gt;"/>
+      <HeaderImage filePath="&lt;main&gt;"/>
+      <Label isEnabled="true"/>
+      <VisualStyle isEnabled="true"/>
+    </UserInterface>
+    <InstallationFiles defaultInstallationPath="&lt;ProgramFiles&gt;\&lt;Company&gt;\&lt;AppName&gt;\" isDefaultInstallationPathAlterable ="false">
+      <InstallationFile size="242.7 KB" type="exe">D:\cProjects\hospitalManagementSystem\dist\hospital.exe</InstallationFile>
+      <InstallationFile size="66.3 KB" type="o">D:\cProjects\hospitalManagementSystem\dist\resource.o</InstallationFile>
+    </InstallationFiles>
+    <Languages>
+      <Language>English</Language>
+    </Languages>
+    <Variables/>
+    <Commands/>
+    <Registry/>
+    <Shortcuts defaultPath="&lt;Company&gt;\&lt;AppName&gt;\" isDefaultPathAlterable="false" isCreateStartmenuShortcutsForAllUsers="false" isCreateDesktopShortcutsForAllUsers="false">
+      <Shortcut destination="Desktop" name="Hospital Management System" targetFile="&lt;InstallPath&gt;\hospital.exe" commandLineArguments="" iconFilePath="" iconIndex="0"/>
+      <Shortcut destination="Startmenu" name="Hospital Management System" targetFile="&lt;InstallPath&gt;\hospital.exe" commandLineArguments="" iconFilePath="" iconIndex="0"/>
+    </Shortcuts>
+    <Serials isDialogEnabled="false" count="1000" mask ="#####-#####-#####-#####"/>
+    <SplashScreen isDialogEnabled="false" delayTime="2">
+      <Image filePath=""/>
+      <Sound isEnabled="false" filePath=""/>
+    </SplashScreen>
+    <License isDialogEnabled="true">
+      <Data>e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjBcbm91aWNvbXBhdFxkZWZsYW5nMTAzM1xkZWZsYW5nZmUxMDMze1xmb250dGJse1xmMFxmc3dpc3NcZnBycTJcZmNoYXJzZXQwIEFwdG9zO319DQp7XCpcZ2VuZXJhdG9yIFJpY2hlZDIwIDEwLjAuMjYxMDB9e1wqXG1tYXRoUHJcbWRpc3BEZWYxXG13cmFwSW5kZW50MTQ0MCB9XHZpZXdraW5kNFx1YzEgDQpccGFyZFx3aWRjdGxwYXJcc2ExNjBcc2wyNzZcc2xtdWx0MVxrZXJuaW5nMlxiXGYwXGZzMjQgQ29weXJpZ2h0IChjKSAyMDI2IE1vaGFtbWFkIE1haGZ1eiBSYWhtYW5ccGFyDQpBbGwgUmlnaHRzIFJlc2VydmVkLlxwYXINClxiMFxwYXINClRoaXMgc29mdHdhcmUsIGluY2x1ZGluZyBpdHMgc291cmNlIGNvZGUsIGRlc2lnbiwgYW5kIGRvY3VtZW50YXRpb25ccGFyDQoodGhlICJTb2Z0d2FyZSIpLCB3YXMgZGV2ZWxvcGVkIGJ5IE1vaGFtbWFkIE1haGZ1eiBSYWhtYW4gYXMgYW4gYWNhZGVtaWNccGFyDQpwcm9qZWN0IGZvciB0aGUgY291cnNlIFNvZnR3YXJlIERldmVsb3BtZW50LUkgKENTRSAxMjkwKSwgRGVwYXJ0bWVudCBvZlxwYXINCkNvbXB1dGVyIFNjaWVuY2UgJiBFbmdpbmVlcmluZywgTm9ydGhlcm4gVW5pdmVyc2l0eSBCYW5nbGFkZXNoLlxwYXINClxwYXINCk5vIHBhcnQgb2YgdGhpcyBTb2Z0d2FyZSBtYXkgYmUgY29waWVkLCByZXByb2R1Y2VkLCBkaXN0cmlidXRlZCwgbW9kaWZpZWQsXHBhcg0KbWVyZ2VkLCBwdWJsaXNoZWQsIHN1YmxpY2Vuc2VkLCBvciB1c2VkLCBpbiB3aG9sZSBvciBpbiBwYXJ0LCBmb3IgYW55XHBhcg0KcHVycG9zZSwgd2l0aG91dCB0aGUgcHJpb3Igd3JpdHRlbiBwZXJtaXNzaW9uIG9mIHRoZSBjb3B5cmlnaHQgaG9sZGVyLlxwYXINClxwYXINClZpZXdpbmcgdGhpcyByZXBvc2l0b3J5J3Mgc291cmNlIGNvZGUgaXMgcGVybWl0dGVkIGZvciBldmFsdWF0aW9uLFxwYXINCmVkdWNhdGlvbmFsIHJlZmVyZW5jZSwgYW5kIGFjYWRlbWljIHJldmlldyBwdXJwb3NlcyBvbmx5IChlLmcuIGJ5XHBhcg0KaW5zdHJ1Y3RvcnMsIGV4YW1pbmVycywgb3IgcmVhZGVycyBicm93c2luZyB0aGUgcHVibGljIHJlcG9zaXRvcnkpLiBUaGlzXHBhcg0KZG9lcyBOT1QgZ3JhbnQgYW55IHJpZ2h0IHRvIGNvcHksIHJldXNlLCBzdWJtaXQsIG9yIHJlZGlzdHJpYnV0ZSB0aGVccGFyDQpTb2Z0d2FyZSwgb3IgYW55IHBvcnRpb24gb2YgaXQsIGFzIG9uZSdzIG93biB3b3JrIG9yIGFzIHBhcnQgb2YgYW55IG90aGVyXHBhcg0KcHJvamVjdCwgYWNhZGVtaWMgb3Igb3RoZXJ3aXNlLlxwYXINClxwYXINClRIRSBTT0ZUV0FSRSBJUyBQUk9WSURFRCAiQVMgSVMiLCBXSVRIT1VUIFdBUlJBTlRZIE9GIEFOWSBLSU5ELCBFWFBSRVNTIE9SXHBhcg0KSU1QTElFRCwgSU5DTFVESU5HIEJVVCBOT1QgTElNSVRFRCBUTyBUSEUgV0FSUkFOVElFUyBPRiBNRVJDSEFOVEFCSUxJVFksXHBhcg0KRklUTkVTUyBGT1IgQSBQQVJUSUNVTEFSIFBVUlBPU0UsIEFORCBOT05JTkZSSU5HRU1FTlQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRVxwYXINCkFVVEhPUiBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUywgT1IgT1RIRVIgTElBQklMSVRZIEFSSVNJTkcgRlJPTSBUSEVccGFyDQpVU0UgT0YgVEhFIFNPRlRXQVJFLlxwYXINClxwYXINCkZvciBwZXJtaXNzaW9uIHJlcXVlc3RzLCBjb250YWN0IHRoZSBhdXRob3IgZGlyZWN0bHkuXHBhcg0KXHBhcg0KfQ0KAA==</Data>
+    </License>
+    <Finish isRebootMachineEnabled="false">
+      <Program executableFilePath="&lt;InstallPath&gt;\hospital.exe" isLaunchEnabled="true" arguments=""/>
+    </Finish>
+  </InstallerConfiguration>
+  <UninstallerConfiguration isPackaged="true">
+    <UninstallerExecutableFileName>Uninstall</UninstallerExecutableFileName>
+    <OpenWebURIAfterUninstallation isEnabled="false">https://</OpenWebURIAfterUninstallation>
+    <CustomDisplayIcon isEnabled="false" iconFilePath="&lt;InstallPath&gt;\"/>
+  </UninstallerConfiguration>
+  <VisualUpdateConfiguration isPackaged="false">
+    <ProductName>&lt;AppName&gt;</ProductName>
+    <ProductVersion>&lt;AppVersion&gt;</ProductVersion>
+    <Language>0</Language>
+    <UpdateScriptURIs>
+      <MainURI>https://</MainURI>
+      <FirstMirrorURI>https://</FirstMirrorURI>
+      <SecondMirrorURI>https://</SecondMirrorURI>
+    </UpdateScriptURIs>
+    <updateExecutableFileName>Update</updateExecutableFileName>
+    <proEditionLicenseKey/>
+    <Program executableFilePath="" isLaunchEnabled="false" isTerminationEnabled="false"/>
+  </VisualUpdateConfiguration>
+  <BuildConfiguration>
+    <SetupFilePath>D:\cProjects\hospitalManagementSystem\installer\setup-1.0.0.exe</SetupFilePath>
+    <SetupIconPath>D:\cProjects\hospitalManagementSystem\icon.ico</SetupIconPath>
+    <UninstallerIconPath>..\icons\ancient.ico</UninstallerIconPath>
+    <Compression method="0" level="2"/>
+    <CodeSigning isEnabled="false" signToolCommandLine="/n &quot;Subject&quot; /tr http://timestamp.digicert.com /td sha256 /fd sha256 &quot;&lt;ExecutableFilePath&gt;&quot;"/>
+  </BuildConfiguration>
+</InstallForgeProject>

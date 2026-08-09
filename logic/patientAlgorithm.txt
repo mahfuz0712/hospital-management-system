@@ -1,0 +1,20 @@
+1. Selft admission
+2. Appointment Booking
+3. Doctors Reviews 
+4. Specialization by Position (Rating System)
+
+
+Ekjon patient nije theke nijeke admit korte parbe that means sign up kort parbe
+patient nije theke kono Appointment book korte parbe by doctor Specialization
+
+patient chaile sokol doctor khuje dekhte parbe
+patient nijer iccha moto doctor choose korte parbe 
+
+
+
+patient hospital er rating dekhte parbe. 
+patient doctor er review dite parbe and rating dtite parbe and rating o review read korte parbe
+so review system thakbe
+
+
+not implemented yet
