@@ -1,19 +1,17 @@
 #ifndef APPOINTMENT_H
 #define APPOINTMENT_H
 
-#define APPOINTMENT_DATE_LEN 11 /* "DD-MM-YYYY" + '\0' */
-#define APPOINTMENT_TIME_LEN 6  /* "HH:MM" + '\0' */
+#define APPOINTMENT_DATE_LEN 11   /* "DD-MM-YYYY" + '\0' */
+#define APPOINTMENT_TIME_LEN 6    /* "HH:MM" + '\0' */
 #define APPOINTMENTS_FILE "data/appointments.dat"
 
-typedef enum
-{
+typedef enum {
     APPT_SCHEDULED = 0,
     APPT_COMPLETED = 1,
     APPT_CANCELLED = 2
 } AppointmentStatus;
 
-typedef struct Appointment
-{
+typedef struct Appointment {
     int id;
     int patientId;
     int doctorId;
@@ -24,35 +22,44 @@ typedef struct Appointment
 } Appointment;
 
 /* ---- Lifecycle ---- */
-Appointment *loadAppointments(void);
+Appointment* loadAppointments(void);
 void saveAppointments(Appointment *head);
 void freeAppointments(Appointment *head);
 
 /* ---- CRUD ---- */
-Appointment *addAppointment(Appointment *head, int patientId, int doctorId,
-                            const char *date, const char *time);
+Appointment* addAppointment(Appointment *head, int patientId, int doctorId,
+                             const char *date, const char *time);
 
-Appointment *deleteAppointment(Appointment *head, int id);
+Appointment* deleteAppointment(Appointment *head, int id);
 
+/* Updates status only (e.g. mark Completed or Cancelled).
+ * Returns 1 if found and updated, 0 otherwise. */
 int updateAppointmentStatus(Appointment *head, int id, AppointmentStatus status);
 
 /* ---- Search ---- */
 
-Appointment *findAppointmentById(Appointment *head, int id);
+Appointment* findAppointmentById(Appointment *head, int id);
+
 
 int isDoctorAvailableAt(Appointment *head, int doctorId,
-                        const char *date, const char *time);
+                         const char *date, const char *time);
+
+
+int hasPatientVisitedDoctor(Appointment *head, int patientId, int doctorId);
+
 
 void displayAppointmentsByPatientId(Appointment *head, int patientId);
 
+
 void displayAppointmentsByDoctorId(Appointment *head, int doctorId);
 
-Appointment *searchAppointmentByDateBinary(Appointment *head, const char *date,
-                                           int *outComparisons);
+
+Appointment* searchAppointmentByDateBinary(Appointment *head, const char *date,
+                                            int *outComparisons);
 
 /* ---- Reporting ---- */
 void displayAllAppointments(Appointment *head);
 void displayAppointment(const Appointment *a);
-const char *appointmentStatusToString(AppointmentStatus s);
+const char* appointmentStatusToString(AppointmentStatus s);
 
 #endif

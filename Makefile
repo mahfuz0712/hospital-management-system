@@ -2,6 +2,7 @@ CC = gcc
 WINDRES = windres
 
 CFLAGS = -Wall -Wextra -Isrc
+LDFLAGS = -lshell32
 
 SRC = src/main.c \
       src/utils.c \
@@ -11,7 +12,9 @@ SRC = src/main.c \
       src/patient.c \
       src/doctor.c \
       src/appointment.c \
-      src/billing.c
+      src/billing.c \
+      src/review.c \
+      src/printing.c
 
 TARGET = dist/hospital.exe
 RES = dist/resource.o
@@ -24,7 +27,7 @@ $(RES): resource.rc icon.ico
 
 $(TARGET): $(SRC) $(RES)
 	@mkdir -p dist
-	$(CC) $(CFLAGS) $(SRC) $(RES) -o $(TARGET)
+	$(CC) $(CFLAGS) $(SRC) $(RES) -o $(TARGET) $(LDFLAGS)
 
 clean:
 	rm -f $(TARGET) $(RES)

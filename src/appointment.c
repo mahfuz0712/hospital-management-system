@@ -189,6 +189,15 @@ int isDoctorAvailableAt(Appointment *head, int doctorId,
     return 0; /* slot is free */
 }
 
+int hasPatientVisitedDoctor(Appointment *head, int patientId, int doctorId) {
+    for (Appointment *curr = head; curr != NULL; curr = curr->next) {
+        if (curr->patientId == patientId && curr->doctorId == doctorId) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 void displayAppointmentsByPatientId(Appointment *head, int patientId)
 {
 
