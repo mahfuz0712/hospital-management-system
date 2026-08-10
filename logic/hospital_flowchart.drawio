@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="jgXkoRyn2Jo3tQSnSc3_" name="Page-1">
-        <mxGraphModel dx="2934" dy="2048" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="2896" dy="1828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -417,9 +417,6 @@
                 </mxCell>
                 <mxCell id="s8_done" value="&amp;nbsp;IMPLEMENTED&lt;br&gt;─────────────────────────&lt;br&gt;• Role-based auth (Admin/Employee/Doctor)&lt;br&gt;• XOR password obfuscation&lt;br&gt;• First-run default admin seeding&lt;br&gt;• User: Add, View, Update, Delete&lt;br&gt;• Patient: Add, View, Update, Delete&lt;br&gt;• Patient: Linear search by name&lt;br&gt;• Patient: Binary search by ID&lt;br&gt;• Doctor: Add, View, Update, Delete&lt;br&gt;• Doctor: Linear search by name&lt;br&gt;• Doctor: Toggle availability&lt;br&gt;• Doctor: findAvailableBySpecialization&lt;br&gt;• Appointment: Book by specialization&lt;br&gt;• Appointment: Double-booking guard&lt;br&gt;  (isDoctorAvailableAt — Cancelled frees slot)&lt;br&gt;• Appointment: View all / by Patient / by Doctor&lt;br&gt;• Appointment: Update status (Sched/Comp/Cancel)&lt;br&gt;• Appointment: Delete&lt;br&gt;• Appointment: Binary search by date&lt;br&gt;• Billing: Create, View, Delete&lt;br&gt;• Billing: Auto-compute totalAmount&lt;br&gt;• Billing: View by Patient ID&lt;br&gt;• Billing: Receipt display&lt;br&gt;• Reports: Patient/Doctor/Appt/Revenue summary&lt;br&gt;• Doctor menu: restricted to own patients only&lt;br&gt;• Binary file I/O for all 5 data stores&lt;br&gt;• Input validation: date, time, phone, int, float" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;arcSize=0;" parent="1" vertex="1">
                     <mxGeometry x="2400" y="110" width="370" height="380" as="geometry"/>
-                </mxCell>
-                <mxCell id="s8_todo" value="&amp;nbsp;NOT YET IMPLEMENTED (future scope)&lt;br&gt;─────────────────────────────────────&lt;br&gt;• Update Appointment (date/time/doctor change)&lt;br&gt;• Update Bill amounts after creation&lt;br&gt;• Appointment reminder / upcoming view&lt;br&gt;• Multi-result name search&lt;br&gt;  (current returns only first match)&lt;br&gt;• Pagination for large lists&lt;br&gt;• Inno Setup .exe packaging&lt;br&gt;• Doctor: view own profile/details&lt;br&gt;• Employee: update patient records" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=center;arcSize=0;" parent="1" vertex="1">
-                    <mxGeometry x="2910" y="110" width="310" height="290" as="geometry"/>
                 </mxCell>
                 <mxCell id="e_role_emp" value="EMPLOYEE" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="s1_role" target="s4_menu" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
