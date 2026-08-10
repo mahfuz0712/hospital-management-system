@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "headers/printing.h"
-
 #ifdef _WIN32
 #include <windows.h>
 #include <shellapi.h>
