@@ -4,7 +4,7 @@
   <Metadata productVersion="1.6.1" projectFileVersion="2.0"/>
   <ProductInformation>
     <Name>Hospital Management System</Name>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <CompanyName>Mohammad Mahfuz Rahman</CompanyName>
     <WebURI>https://portfolio-mahfuz0712.vercel.app</WebURI>
   </ProductInformation>
@@ -32,7 +32,7 @@
       <VisualStyle isEnabled="true"/>
     </UserInterface>
     <InstallationFiles defaultInstallationPath="&lt;ProgramFiles&gt;\&lt;Company&gt;\&lt;AppName&gt;\" isDefaultInstallationPathAlterable ="false">
-      <InstallationFile size="242.7 KB" type="exe">D:\cProjects\hospitalManagementSystem\dist\hospital.exe</InstallationFile>
+      <InstallationFile size="241.1 KB" type="exe">D:\cProjects\hospitalManagementSystem\dist\hospital.exe</InstallationFile>
       <InstallationFile size="66.3 KB" type="o">D:\cProjects\hospitalManagementSystem\dist\resource.o</InstallationFile>
     </InstallationFiles>
     <Languages>
@@ -76,7 +76,7 @@
     <Program executableFilePath="" isLaunchEnabled="false" isTerminationEnabled="false"/>
   </VisualUpdateConfiguration>
   <BuildConfiguration>
-    <SetupFilePath>D:\cProjects\hospitalManagementSystem\installer\setup-1.0.0.exe</SetupFilePath>
+    <SetupFilePath>D:\cProjects\hospitalManagementSystem\installer\setup-1.0.1.exe</SetupFilePath>
     <SetupIconPath>D:\cProjects\hospitalManagementSystem\icon.ico</SetupIconPath>
     <UninstallerIconPath>..\icons\ancient.ico</UninstallerIconPath>
     <Compression method="0" level="2"/>

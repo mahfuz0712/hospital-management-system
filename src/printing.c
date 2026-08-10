@@ -8,10 +8,7 @@
 #include <shellapi.h>
 #endif
 
-/* Makes sure data/receipts/ exists before we try to write into
- * it. Cross-platform: the Windows branch is what actually runs
- * in the real MSYS2-MinGW build; the POSIX branch only exists so
- * the project still compiles cleanly on non-Windows machines. */
+
 static void ensureReceiptsDirExists(void) {
 #ifdef _WIN32
     system("if not exist data\\receipts mkdir data\\receipts >nul 2>nul");
@@ -30,9 +27,7 @@ int writeBillReceiptToFile(const Bill *b, const char *filepath) {
         return 0;
     }
 
-    /* Same layout as displayBillReceipt() in billing.c, just
-     * aimed at a file instead of stdout, so the printed paper
-     * looks exactly like the on-screen receipt. */
+
     fprintf(fp, "==========================================\n");
     fprintf(fp, "        HOSPITAL BILLING RECEIPT\n");
     fprintf(fp, "==========================================\n");
@@ -55,20 +50,12 @@ int writeBillReceiptToFile(const Bill *b, const char *filepath) {
 
 int sendFileToDefaultPrinter(const char *filepath) {
 #ifdef _WIN32
-    /* ShellExecute with the "print" verb hands the file to
-     * whatever the OS has registered as the default printer --
-     * this works identically for a normal office printer and for
-     * a POS/receipt printer, since POS printers are installed as
-     * a Windows printer driver too. ShellExecute returns a value
-     * greater than 32 on success; anything <= 32 is an error code. */
+
     HINSTANCE result = ShellExecuteA(NULL, "print", filepath, NULL, NULL, SW_HIDE);
     return ((INT_PTR)result > 32);
 #else
     (void)filepath;
-    /* Non-Windows build: no Windows printer driver to hand this
-     * off to. The receipt file has already been written by
-     * writeBillReceiptToFile(), so it can still be opened/printed
-     * manually -- nothing is lost, this just can't auto-print. */
+
     return 0;
 #endif
 }
