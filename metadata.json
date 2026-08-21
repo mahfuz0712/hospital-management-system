@@ -6,8 +6,6 @@
     "ageRating": "13+",
     "license": "Proprietary",
     "type": "app",
-    "isPaid": true,
-    "price": 2000,
-    "currency": "BDT",
+    "isPaid": false,
     "containsAds": false
 }
